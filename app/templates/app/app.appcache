@@ -1,0 +1,11 @@
+CACHE MANIFEST
+
+CACHE:
+favicon.ico
+index.html
+scripts/vendor.js
+scripts/main.js
+http://maps.googleapis.com/maps/api/js?sensor=true&region=UY&language=es
+
+NETWORK:
+*

@@ -1,0 +1,76 @@
+@import "variables";
+@import "vendor/solved-by-flexbox/grid";
+@import "vendor/solved-by-flexbox/site";
+
+*, *::before, *::after {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+body {
+    background: $background-color;
+    color: $text-color;
+    font-family: $font;
+    margin: 0;
+    -webkit-font-smoothing: antialiased;
+}
+
+.btn-initial {
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+    left: 0;
+    padding: 6px;
+    position: absolute;
+    top: 0;
+}
+
+.btn-info {
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+    display: block;
+    color: $text-color;
+    font-size: 2em;
+    position: absolute;
+    right: 0;
+    text-align: center;
+    text-decoration: none;
+    top: 0;
+    width: 42px;
+}
+
+h1, .h1 {
+    font-size: 1.6em;
+    font-weight: normal;
+    margin: 0.2em 0;
+}
+
+.bar {
+    background: $bar-color;
+    position: relative;
+    text-align: center;
+}
+
+.filter {
+    background: $filter-background;
+    border: none;
+
+    border-left: 1px solid $divider-color;
+
+    color: $filter-color;
+    cursor: pointer;
+    font-size: 1em;
+    margin: 0;
+    padding: 1em;
+    -webkit-font-smoothing: antialiased;
+
+    &:focus {
+        outline: none;
+    }
+
+    &:first-child {
+        border-left: none;
+    }
+
+    &.active {
+        background: $filter-background-active;
+    }
+}

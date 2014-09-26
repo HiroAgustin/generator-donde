@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="es" dir="ltr" itemscope itemtype="http://schema.org/WebApplication" class="no-js" manifest="app.appcache">
+<head>
+  <meta charset="utf-8">
+  <title itemprop="name"><%= appname %></title>
+  <meta name="description" itemprop="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="dns-prefetch" href="//maps.googleapis.com">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:site" content="">
+  <meta name="twitter:creator" content="">
+  <!-- Open Graph -->
+  <meta property="og:title" content="">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="">
+  <meta property="og:description" content="">
+  <meta property="og:image" itemprop="image" content="">
+  <meta property="og:image:type" content="">
+  <meta property="og:image:width" content="">
+  <meta property="og:image:height" content="">
+  <meta property="og:site_name" content="">
+
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="apple-mobile-web-app-title" content="ParkingYa">
+
+  <meta name="msapplication-TileColor" content="<%= color %>">
+
+  <link rel="apple-touch-icon" sizes="114x114" href="/apple-touch-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="/apple-touch-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="/apple-touch-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="/apple-touch-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/apple-touch-icon-76x76.png">
+  <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96">
+  <link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16">
+  <link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32">
+
+  <!-- build:css styles/vendor.css -->
+  <!-- bower:css -->
+  <!-- endbower -->
+  <!-- endbuild -->
+  <!-- build:css(.tmp) styles/main.css -->
+  <link rel="stylesheet" href="styles/main.css">
+  <!-- endbuild -->
+</head>
+<body class="Site">
+  <header class="header bar">
+    <h1><%= appname %></h1>
+
+    <svg id="js-btn-initial" class="btn-initial" xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="29 471.5 42 42" enable-background="new 29 471.5 42 42" xml:space="preserve">
+      <path fill="#F5F5F5" d="M50,471.953c-7.265,0-13.15,5.887-13.15,13.15c0,7.396,13.15,27.943,13.15,27.943s13.15-20.68,13.15-27.943 S57.266,471.953,50,471.953z M50,490.857c-3.632,0-6.575-2.947-6.575-6.574c0-3.629,2.943-6.576,6.575-6.576 c3.633,0,6.575,2.947,6.575,6.576S53.633,490.857,50,490.857z"/>
+    </svg>
+
+    <a href="mailto:" class="btn-info">&#9990;</a>
+  </header>
+
+  <main id="js-map" class="map Site-content" role="main"></main>
+
+  <footer id="js-nav" class="footer bar Grid">
+    <button class="Grid-cell filter" data-type="hora">Hora</button>
+    <button class="Grid-cell filter" data-type="dia">Día</button>
+    <button class="Grid-cell filter" data-type="mes">Mes</button>
+  </footer>
+
+  <script src="//maps.googleapis.com/maps/api/js?sensor=true&region=UY&language=es"></script>
+  <!-- build:js scripts/vendor.js -->
+  <!-- bower:js -->
+  <script src="../bower_components/donde.js/donde.js"></script>
+  <!-- endbower -->
+  <!-- endbuild -->
+
+  <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+  <script>(function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;e=o.createElement(i);r=o.getElementsByTagName(i)[0];e.src='//www.google-analytics.com/analytics.js';r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));ga('create','UA-XXXXX-X');ga('send','pageview');</script>
+
+  <!-- build:js({app,.tmp}) scripts/main.js -->
+  <script src="scripts/main.js"></script>
+  <!-- endbuild -->
+</body>
+</html>

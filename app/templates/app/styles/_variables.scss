@@ -1,0 +1,16 @@
+$main-color: <%= color %>;
+
+$background-color: lightgray;
+$bar-color: $main-color;
+
+$font: Helvetica, Arial, sans-serif;
+
+$text-color: white;
+
+$filter-color: white;
+
+$filter-background: $main-color;
+
+$filter-background-active: darken($main-color, 25%);
+
+$divider-color: lighten($main-color, 25%);
