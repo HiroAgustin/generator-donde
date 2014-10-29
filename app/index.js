@@ -11,9 +11,13 @@
 
   , prompting: function ()
     {
-      var done = this.async()
+      var done = this.async();
 
-      , prompts = [
+      // Have Yeoman greet the user.
+      this.log(yosay('Creating new Donde app!'));
+
+      this.prompt(
+        [
           {
             type: 'list'
           , name: 'color'
@@ -45,19 +49,16 @@
           , message: 'Include Procfile? (heroku)'
           , default: true
           }
-        ];
+        ]
+      , function (props)
+        {
+          this.color = props.color;
+          this.isHeroku = props.isHeroku;
 
-      // Have Yeoman greet the user.
-      this.log(yosay('Creating new Donde app!'));
+          done();
 
-      this.prompt(prompts, function (props)
-      {
-        this.color = props.color;
-        this.isHeroku = props.isHeroku;
-
-        done();
-
-      }.bind(this));
+        }.bind(this)
+      );
     }
 
   , writing: {
