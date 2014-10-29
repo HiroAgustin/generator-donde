@@ -1,11 +1,8 @@
-'use strict';
-var
-  util = require('util')
-, path = require('path')
-, yosay = require('yosay')
-, yeoman = require('yeoman-generator')
+;(function (yosay, yeoman)
+{
+  'use strict';
 
-, DondeGenerator = yeoman.generators.Base.extend({
+  module.exports = yeoman.generators.Base.extend({
 
     initializing: function ()
     {
@@ -14,14 +11,13 @@ var
 
   , prompting: function ()
     {
-      var
-        done = this.async()
+      var done = this.async()
 
       , prompts = [
           {
             type: 'list'
           , name: 'color'
-          , message: 'Elige color principal:'
+          , message: 'Choose main color:'
           , default: 8
           , choices: [
               {name: 'Navy', value: '#001F3F'}
@@ -41,28 +37,18 @@ var
             , {name: 'Gray', value: '#AAAAAA'}
             , {name: 'Silver', value: '#DDDDDD'}
             , {name: 'White', value: '#FFFFFF'}
-            , {name: 'Otro', value: 'otro'}
             ]
           }
-        // , {
-        //     when: function (answers)
-        //     {
-        //       return answers && answers.color && answers.color === 'otro';
-        //     }
-        //   , type: 'input'
-        //   , name: 'color'
-        //   , message: 'Escribe el color, incluye #'
-        //   }
         , {
             type: 'confirm'
           , name: 'isHeroku'
-          , message: 'Incluyo un Procfile? (heroku)'
+          , message: 'Include Procfile? (heroku)'
           , default: true
           }
         ];
 
       // Have Yeoman greet the user.
-      this.log(yosay('Creando una nueva Donde app!'));
+      this.log(yosay('Creating new Donde app!'));
 
       this.prompt(prompts, function (props)
       {
@@ -70,6 +56,7 @@ var
         this.isHeroku = props.isHeroku;
 
         done();
+
       }.bind(this));
     }
 
@@ -98,10 +85,13 @@ var
           this.src.copy('app/Procfile', 'app/Procfile');
 
         this.template('app/index.html');
+
         this.src.copy('app/robots.txt', 'app/robots.txt');
         this.src.copy('app/markers.json', 'app/markers.json');
         this.src.copy('app/app.appcache', 'app/app.appcache');
+
         this.template('app/_package.json', 'app/package.json');
+
         this.src.copy('app/server/index.js', 'app/server/index.js');
       }
 
@@ -124,4 +114,4 @@ var
     }
   });
 
-module.exports = DondeGenerator;
+}(require('yosay'), require('yeoman-generator')));
